@@ -1,3 +1,81 @@
+@keyframes winnerMove {
+
+  0%{
+    
+  }
+  25%{
+    transform: translateY(-100px);
+   }
+  50%{
+   transform: rotateX(25deg);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
+
+}
+
+@keyframes winnerMove2 {
+
+  0%{
+  
+  }
+  25%{
+    transform: translateX(-90px);
+   }
+   
+  50%{
+  transform: rotate(20deg);
+  }
+ 75%{
+  transform: translateX(90px);
+ }
+  90%{
+
+    transform: rotate(-10deg);
+  }
+
+}
 
 
-/*# sourceMappingURL=styles.css.map */
+@keyframes emoticon1{
+from{
+
+ opacity: .6;
+ transform: translate(20px, -100px);
+}
+to{
+}
+}
+
+
+@keyframes emoticon2{
+  from{
+  
+   opacity: .6;
+   transform: translate(-100px);
+  }
+  to{
+  }
+}
+
+.winner{
+  animation: winnerMove ease-in-out 1s  infinite  ;
+}
+
+.winner2{
+  animation: winnerMove2 ease-in 1s  infinite  ;
+}
+
+.star{
+  transform: rotate(80deg);
+  right: -20px;
+}
+.emoticon1{
+  animation: emoticon1 ease-in-out .5s  ;
+}
+
+.emoticon2{
+  animation: emoticon2 ease-in-out .5s  ;
+}

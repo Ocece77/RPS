@@ -1,12 +1,14 @@
 # RPS
-Rock Paper scissors with Javascript - Bootstrap and SASS
+
+Rock Paper scissors with Javascript - Bootstrap and SASS 🗿 📄 ✂️
+ 
 # Frontend Mentor Projects
 
 This repositories is an Javascript Game  - Rock Paper Scissors 
-## Projects
+I made it using Boostrap and Sass, this is my first project using this technologies ! Also this is a project for my courses with the Odin project !
+(https://www.theodinproject.com/lessons/foundations-rock-paper-scissors)[https://www.theodinproject.com/lessons/foundations-rock-paper-scissors]
 
-
-## How to Contribute
+## How to Contribute 🌱
 
 I'm open to contributions that improve my existing solutions or add new features. If you'd like to contribute, please follow these steps:
 
@@ -16,7 +18,7 @@ I'm open to contributions that improve my existing solutions or add new features
 4. Push your changes to your branch:
 5. Create a Pull Request to the main branch of this repository.
 
-## Be Courteous
+## Be Courteous 💗
 
 While contributing to this project, please follow these guidelines to maintain a respectful and collaborative environment:
 
@@ -28,7 +30,7 @@ I greatly appreciate your contributions and your commitment to making this proje
 
 **Thank you for contributing and staying courteous!** ❤️
 
-## The page to see my project
+## The page to see my project 😎
 
 See my project on live by clicking on this link:
 https://ocece77.github.io/RPS/
