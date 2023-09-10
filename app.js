@@ -1,23 +1,115 @@
+/*array of items */
+
 const items = [ "paper", "rock", "scissors"];
 const moves = ["winner" ,"winner2"];
+const names = ["Alix","Élie","Dominique","Morgan","Loïs","Eden","Charlie","Ange","Camille","Stéphane","Ivy","Joy","Cameron","Terry","Taylor","Sidney","Skye","Yuri","Yuma","Yuki","Tomi","Tama","Aoi","Kaori",]
+const avatar = [
+  {
+    id : 1,
+    src : "./image/avatar1.png",
+  },
+
+  {
+    id : 2,
+    src : "./image/avatar2.png",
+  },
+
+  {
+    id : 3,
+    src : "./image/avatar3.png",
+  },
+
+  {
+    id : 4,
+    src : "./image/avatar4.png",
+  },
+
+  {
+    id : 5,
+    src : "./image/avatar5.png",
+  },
+
+  {
+    id : 6,
+    src : "./image/avatar6.png"
+  },
+
+  {
+    id : 7,
+    src : "image/avatar7.png",
+  },
+
+  {
+    id : 8,
+    src : "./image/avatar8.png",
+  },
+
+  {
+    id : 9,
+    src : "./image/avatar9.png",
+  },
+
+
+  {
+    id : 10,
+    src : "./image/avatar10.png",
+  },
+]
+
 
 var choice = document.getElementById("choice");
 var replay = document.getElementById("replay");
 var annoucement= document.getElementById("annoucement");
+
+/*Avatar/skin/character */
 const computerAvatar= document.getElementById("computerAvatar");
 const playerAvatar= document.getElementById("playerAvatar");
+
+/*names */
+const computerName = document.getElementById("computerName");
+
+/*bouttons items */
 const play = document.getElementById("play");
 const playbtn = document.getElementById("btnplay");
 const btns = document.querySelectorAll(".btn-check");
 const btnReplay = document.getElementById("btnreplay");
+
+
 const computerSelection = document.getElementById("computerSelection");
 const playerSelection = document.getElementById("playerSelection");
 const playerIsWinning = document.getElementById("playerIsWinning");
+
+/*winning items */
 const computerIsWinning = document.getElementById("computerIsWinning");
 const stars = document.querySelectorAll(".star");
 const confettis = document.querySelectorAll(".confetti");
 
 
+
+/* Generate a random image and names for the computer avatar  */
+
+const randomItems = (arr) =>{
+  return Math.floor(Math.random() * arr.length)
+}
+
+const randomComputerImg = ()=>{
+  /*computer image cannot be the same as the player  */
+ computerAvatar.src =  avatar[randomItems(avatar)].src
+ if (computerAvatar.src == playerAvatar.src){
+  computerAvatar.src =  avatar[randomItems(avatar)].src
+ }
+
+}
+
+const randomComputerName = ()=>{
+ computerName.textContent = names[randomItems(names)];
+}
+computerSpeudo =  computerName.textContent;
+
+window.addEventListener("DOMContentLoaded", () => {
+  randomComputerImg()
+  randomComputerName()
+})
 
 
 
@@ -27,7 +119,6 @@ const confettis = document.querySelectorAll(".confetti");
   playbtn.addEventListener("click", ()=>{
   play.classList.add("visually-hidden")
   choice.classList.remove("visually-hidden")
-
  });
 
  
@@ -36,21 +127,23 @@ const confettis = document.querySelectorAll(".confetti");
 
 /*THE GAME */
 /* Getting player choice*/
-let playerChoice = undefined;
+ let playerChoice = undefined;
  let playerScore = 0;
  let computerScore = 0;
 
 
 
 
-btns.forEach(btn => 
+
+
+  btns.forEach(btn => 
   btn.addEventListener("click", (e)=>{
-   playerChoice = e.currentTarget.id;
+  playerChoice = e.currentTarget.id;
 
   const computerResult = document.getElementById("computer-result");
   const playerResult = document.getElementById("player-result");
 
-  
+
 
  if (playerScore < 5 && computerScore < 5){
   
@@ -114,7 +207,7 @@ if(!equality.classList.contains("visually-hidden")){
 /*Display the result */
 computerResult.textContent = computerScore;
 playerResult.textContent = playerScore;
-computerSelection.innerHTML =`<p>The computer choose <span class="text-danger text-capitalize fs-3">${computerChoice}</span> </p>`
+computerSelection.innerHTML =`<p>${computerName.textContent} choose <span class="text-danger text-capitalize fs-3">${computerChoice}</span> </p>`
 playerSelection.innerHTML =`<p>You\'ve choose <span class="text-primary text-capitalize fs-3">${playerChoice}</span> </p>`
 
 } else {  
@@ -124,7 +217,6 @@ playerSelection.innerHTML =`<p>You\'ve choose <span class="text-primary text-cap
     } 
   
     var winnerMoves = moves[randomMoves(moves)]
-    console.log(winnerMoves)
  
 
   if(computerScore == 5){
@@ -152,8 +244,6 @@ playerSelection.innerHTML =`<p>You\'ve choose <span class="text-primary text-cap
     stars.forEach( star=>{
        star.classList.add("emoticon2");
     });
-
-
 
   }
   
@@ -198,14 +288,17 @@ btnReplay.addEventListener("click",()=>{
      star.classList.remove("emoticon2");
   });
 
-})
+ 
+  computerSelection.innerHTML =""
+   playerSelection.innerHTML =""
 
+  randomComputerImg()
+  randomComputerName()
+})
 }
 
 })
 );
-
-
 
 
 

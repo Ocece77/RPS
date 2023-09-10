@@ -50,6 +50,20 @@ to{
 }
 
 
+
+
+
+/*Animation when one player win !*/
+.winner{
+  animation: winnerMove ease-in-out 1s  infinite  ;
+}
+
+.winner2{
+  animation: winnerMove2 ease-in 1s  infinite  ;
+}
+
+
+/*Animation for the icon */
 @keyframes emoticon2{
   from{
   
@@ -58,14 +72,6 @@ to{
   }
   to{
   }
-}
-
-.winner{
-  animation: winnerMove ease-in-out 1s  infinite  ;
-}
-
-.winner2{
-  animation: winnerMove2 ease-in 1s  infinite  ;
 }
 
 .star{
@@ -78,4 +84,33 @@ to{
 
 .emoticon2{
   animation: emoticon2 ease-in-out .5s  ;
+}
+
+
+/*modal box*/
+
+#modal{
+  height: 100%;
+  z-index: 1000;
+}
+
+#modalbg{
+  background-color: rgba(0, 0, 0, .4);
+  height: 100%;
+}
+
+#modalcontent{
+height: 60vh;
+}
+
+#modalcard{
+  height: 100%;
+}
+
+.card{
+  width: 17%;
+}
+
+@media screen and (max-width:428px){
+  
 }
