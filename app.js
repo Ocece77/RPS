@@ -3,7 +3,7 @@
 const items = [ "paper", "rock", "scissors"];
 const moves = ["winner" ,"winner2"];
 const names = ["Alix","Élie","Dominique","Morgan","Loïs","Eden","Charlie","Ange","Camille","Stéphane","Ivy","Joy","Cameron","Terry","Taylor","Sidney","Skye","Yuri","Yuma","Yuki","Tomi","Tama","Aoi","Kaori",]
-const avatar = [
+const avatars = [
   {
     id : 1,
     src : "./image/avatar1.png",
@@ -56,6 +56,24 @@ const avatar = [
   },
 ]
 
+/*generate the different card in the inner html 
+const modalcard = document.getElementById("modalcard");
+
+  const avatarCards = avatars.map(avatar => {
+    return `
+      <div class="container-fluid bg-warning d-flex justify-content-center">
+        <div class="card border border-dark rounded">
+          <img id=${avatar.src} src=${avatar.src} alt="card-img" class="card-img">
+        </div>
+      </div>
+    `
+  }).join("")
+
+
+modalcard.innerHTML = avatarCards;*/
+
+
+
 
 var choice = document.getElementById("choice");
 var replay = document.getElementById("replay");
@@ -94,9 +112,9 @@ const randomItems = (arr) =>{
 
 const randomComputerImg = ()=>{
   /*computer image cannot be the same as the player  */
- computerAvatar.src =  avatar[randomItems(avatar)].src
+ computerAvatar.src =  avatars[randomItems(avatars)].src
  if (computerAvatar.src == playerAvatar.src){
-  computerAvatar.src =  avatar[randomItems(avatar)].src
+  computerAvatar.src =  avatars[randomItems(avatars)].src
  }
 
 }
@@ -289,8 +307,8 @@ btnReplay.addEventListener("click",()=>{
   });
 
  
-  computerSelection.innerHTML =""
-   playerSelection.innerHTML =""
+  computerSelection.innerHTML = ""
+   playerSelection.innerHTML = ""
 
   randomComputerImg()
   randomComputerName()

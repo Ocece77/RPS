@@ -51,8 +51,6 @@ to{
 
 
 
-
-
 /*Animation when one player win !*/
 .winner{
   animation: winnerMove ease-in-out 1s  infinite  ;
